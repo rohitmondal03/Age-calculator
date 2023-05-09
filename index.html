@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="./assets/images/favicon-32x32.png" type="image/x-icon">
+  <link rel="stylesheet" href="./styles/styles.css">
+  <title>Frontend Mentor | Age calculator app</title>
+</head>
+
+<body>
+
+  <div class="container">
+
+    <div class="main_div">
+
+      <form id="form" action="" onsubmit="submitForm(event)">
+
+        <div class="inputs">
+          <label for="date">Date</label>
+          <input id="date" type="number"  autocomplete="off"/>
+        </div>
+
+        <div class="inputs">
+          <label for="">Month</label>
+          <input id="month" type="number"  autocomplete="off"/>
+        </div>
+
+        <div class="inputs">
+          <label for="">Year</label>
+          <input id="year" type="number"  autocomplete="off"/>
+        </div>
+
+        
+
+        <button id="btn" type="submit">Submit</button>
+
+      </form>
+
+
+
+      <div class="results">
+
+        <h1 class="head_results"> <span id="years_results">--</span> years </h1>
+
+        <h1 class="head_results"> <span id="months_results">--</span> months </h1>
+
+        <h1 class="head_results"> <span id="days_results">--</span> days </h1>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <script src="./js/index.js"></script>
+
+</body>
+
+<!-- <script></script> -->
+
+</html>
+
+
+
+
+<!-- <div class="attribution">
+  Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">Your Name Here</a>. -->

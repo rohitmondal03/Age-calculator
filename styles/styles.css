@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: rgb(211, 211, 211);
+}
+
+.container {
+    height: 100vh;
+    width: 100%;
+    position: relative;
+    margin: 1rem auto;
+}
+
+.main_div {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 2rem;
+    border-radius: 1rem 1rem 10rem 1rem;
+}
+
+.main_div form {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    border-bottom: 3px solid rgb(188, 188, 188);
+    padding: 1rem 0;
+}
+
+.main_div form .inputs {
+    margin: 2rem 3rem;
+    position: relative;
+}
+
+.main_div form .inputs label {
+    position: absolute;
+    top: -40%;
+    left: 0%;
+    font-size: 1rem;
+    text-transform: uppercase;
+}
+
+.main_div form .inputs input {
+    width: 5rem;
+    height: 2rem;
+    padding: 1rem;
+    border: 1px solid black;
+    border-radius: 10px;
+}
+
+.main_div form .inputs input:hover {
+    border: 3px solid rgb(198, 65, 255);
+    cursor: auto;
+}
+
+
+
+.main_div form #btn {
+    padding: .75rem 2rem;
+    margin: auto;
+    border-radius: 2rem;
+    border: .2rem solid black;
+    background-color: rgb(163, 71, 255);
+    color: rgb(255, 255, 255);
+    transition: .2s all ease-out;
+}
+
+.main_div form #btn:hover {
+    cursor: pointer;
+    background-color: rgb(198, 65, 255);
+    transform: scale(1.1);
+}
+
+
+
+
+
+.results {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 3rem auto;
+}
+
+.results h1 {
+    font-size: 4rem;
+    font-weight: bolder;
+    font-style: italic;
+    color: black;
+}
+
+.results span {
+    color: rgb(145, 61, 255);
+}
