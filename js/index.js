@@ -1,43 +1,71 @@
 // inputs
 var date = document.getElementById('date');
-var month = document.getElementById('month');
-var year = document.getElementById('year');
 
+// label tag before input
+var label = document.getElementById('heading')
 
-// submit button
-var btn = document.getElementById('btn');
-
-
-// outputs placeholders
-var dateRes = document.getElementById('days_results');
-var monthRes = document.getElementById('months_results');
-var yearRes = document.getElementById('years_results');
+// outputs
+var dateOutput = document.getElementById('days_results');
+var monthOutput = document.getElementById('months_results');
+var yrsOutput = document.getElementById('years_results');
 
 
 function submitForm(event) {
     event.preventDefault();
 
-    // THIS IS OF STRING TYPE. WILLL GET MONTH IN NUM
-    // var monthSlice = month.value.slice(5);
 
-    // monthNum = parseInt(monthSlice)
-    // console.log(typeof monthNum);
+    // Get the birth date from the user
+    var birthDate = new Date(date.value);
 
-
-
-    var inputDate = date.value;
-    var inputMonth = month.value - 1;
-    var inputYear = year.value;
-
-
-    // current date
+    // Get the current date
     var currentDate = new Date();
 
 
-}
+    if (
+        (birthDate.getFullYear() > currentDate.getFullYear())
+        || (birthDate.getFullYear() == currentDate.getFullYear() && birthDate.getMonth() > currentDate.getMonth())
+        || (birthDate.getFullYear() == currentDate.getFullYear() && birthDate.getMonth() == currentDate.getMonth() && birthDate.getDate() > currentDate.getDate())
+    ) {
+        label.innerHTML = `<p style="color: red">Wrong inputs !</p>`
+
+        dateOutput.innerHTML= "--"
+        monthOutput.innerHTML= "--"
+        yrsOutput.innerHTML= "--"
+
+        return;
+    }
+
+    if(birthDate == NaN) {
+        yrsOutput.innerHTML = "" ;
+        monthOutput.innerHTML = "" ;
+        dateOutput.innerHTML = "" ;
+
+        return;
+    }
 
 
-// FUNCTION TO CHECK LEAP YEAR
-function isLeapYear(year) {
-    return (year % 4 === 0 && year % 100 !== 0) || year % 400 === 0;
+
+    // Calculate the difference in years
+    var ageInYears = currentDate.getFullYear() - birthDate.getFullYear();
+
+    // Calculate the difference in months
+    var monthDiff = currentDate.getMonth() - birthDate.getMonth();
+    if (monthDiff < 0) {
+        ageInYears--;
+        monthDiff = 12 + monthDiff;
+    }
+
+    // Calculate the difference in days
+    var dayDiff = currentDate.getDate() - birthDate.getDate();
+    if (dayDiff < 0) {
+        monthDiff--;
+        dayDiff = new Date(currentDate.getFullYear(), currentDate.getMonth(), 0).getDate() + dayDiff; 
+    }
+
+    label.innerHTML= "Enter your birthday"
+
+    yrsOutput.innerHTML = "" + ageInYears;
+    monthOutput.innerHTML = "" + monthDiff;
+    dateOutput.innerHTML = "" + dayDiff;
+
 }
